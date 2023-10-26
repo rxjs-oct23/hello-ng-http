@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { IpComponent } from './ip/ip.component';
 import { LocationComponent } from './location/location.component';
 import { WeatherComponent } from './weather/weather.component';
+import { LocationSearchComponent } from './location-search/location-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     IpComponent,
     LocationComponent,
-    WeatherComponent
+    WeatherComponent,
+    LocationSearchComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

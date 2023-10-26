@@ -1,0 +1,9 @@
+<div>
+    <label for="q">Search: </label>
+    <input id="q" type="text" [formControl]="q">
+</div>
+<div>
+    <div *ngFor="let item of list">
+        <a href="#" (click)="setLocation(item)">{{item.name}}, {{item.country}}</a>
+    </div>
+</div>
