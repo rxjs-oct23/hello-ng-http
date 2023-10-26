@@ -1,6 +1,22 @@
 # HelloNgHttp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+This project illustrates using RxJS in Angular, both in HttpClient and as a Subject to multicast events of interest among multiple components.
+
+We use the following APIs:
+
+* [ipify](https://www.ipify.org/)
+* [open-meteo](https://open-meteo.com/)
+* [IPgeolocation](https://ipgeolocation.io/)
+
+All three are free for development purposes, but IPgeolocation requires a free token to track usage. Please [sign up](https://ipgeolocation.io/signup.html) to get a token and make it available to the application in a `.env.local` file (which is ignored by git):
+
+```dotenv
+NG_APP_IPGEO_API_KEY=your_token_here
+```
+
+Both making the application look pretty and pass unit tests are left as an exercise to the reader.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8 and uses [@ngx-env/builder](https://github.com/chihab/ngx-env) to inject secrets into the app. 
 
 ## Development server
 
