@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { IpService } from './ip.service';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hello-ng-http';
+  ipService: IpService = inject(IpService);
+  ip:string='';
+
+  constructor() {
+    this.ipService.getIp().pipe(
+      tap(ip=>{this.ip=ip}),
+    ).subscribe()
+  }
+
 }
