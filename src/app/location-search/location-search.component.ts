@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { WeatherService } from '../weather.service';
-import { switchMap, tap } from 'rxjs';
+import { debounce, debounceTime, switchMap, tap } from 'rxjs';
 import { LocationChangeService } from '../location-change.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class LocationSearchComponent {
 
   constructor() {
     this.q.valueChanges.pipe(
+      debounceTime(1000),
       switchMap(str=>{
         return this.weatherService.searchByName(str||'');
       }),
